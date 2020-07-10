@@ -1,0 +1,59 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+      .code { font-family: Courier; }
+    </style></head>
+   <body><pre>
+#ifndef PARAMETERS_H
+#define PARAMETERS_H
+
+#include &lt;cmath&gt; // for HUGE_VAL
+#include "parameter.h"
+
+namespace biocro_parameters {
+
+    const parameter windspeed{"windspeed", "Wind speed at the top of the canopy.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soilEvap{"soilEvap", "Rate of evaporation of water from the soil.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter solar{"solar", "Photosynthetically active radiation photon flux at the top of the canopy", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter lat{"lat", "Latitude", -90, true, 90, true};
+    const parameter rh{"rh", "Relative humidity", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soil_bulk_density{"soil_bulk_density", "Mass of soil per volume of bulk soil.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soil_water_content{"soil_water_content", "Volume of water per volume of bulk soil.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soil_saturated_conductivity{"soil_saturated_conductivity", "Conductivity of soil when soil_saturation_capacity is 1", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soil_saturation_capacity{"soil_saturation_capacity", "The maximum soil_water_content that the soil can hold.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Leaf{"Leaf", "Dry mass of leaves per area of ground.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Stem{"Stem", "Dry mass of stems per area of ground.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Root{"Root", "Dry mass of roots per area of ground.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Sp{"Sp", "Specific leaf area, one-sided leaf area per mass of leaf", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Sp_thermal_time_decay{"Sp_thermal_time_decay", "The rate at which Sp decreases", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter iSp{"iSp", "Initial value of specific leaf area when TTc is 0.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter TTc{"TTc", "Thermal time as growing degree days.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter precipitation_rate{"precipitation_rate", "Precipitation per time.", 0, true, 0.52, true};
+    const parameter b0{"b0", "Ball-Berry model intercept.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter b1{"b1", "Ball-Berry model slope.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter heightf{"heightf", "The LAI per vertical height of the canopy", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter temp{"temp", "Air temperature", -273.15, false, HUGE_VAL, false};
+    const parameter leafwidth{"leafwidth", "Leaf width", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter canopy_assimilation_rate{"canopy_assimilation_rate", "Canopy carbon assimilation rate on a ground-area basis", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter canopy_transpiration_rate{"canopy_transpiration_rate", "Canopy water transpiation rate on a ground-area basis", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Grain{"Grain", "Mass of grain per ground area", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Rhizome{"Rhizome", "Mass of rhizomes per ground area", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter acceleration_from_gravity{"acceleration_from_gravity", "Accerlation from gravity", 9.7639, true, 9.8337, true};
+    const parameter lai{"lai", "Leaf area index", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter Catm{"Catm", "Atmospheric CO2 concentration", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter vmax{"vmax", "Maximum carboxylation rate of C4 photosynthesis.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter alpha{"alpha", "Quantum efficiency of CO2 assimiliation for incident radiation.", 0, false, 1, false};
+    const parameter kparm{"kparm", "Slope of the roughly linear portion of an A-Ci curve.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter slope_water_vapor{"slope_water_vapor", "Slope of the saturation water vapor density vs air temperature curve.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter latent_heat_vaporization_of_water{"latent_heat_vaporization_of_water", "Latent heat of vaporization of water.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter saturation_water_vapor_pressure{"saturation_water_vapor_pressure", "Vapor pressure of water that saturates the air's capacity.", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter vapor_density_deficit{"vapor_density_deficit", "The different between vapor density and saturated vapor density", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter psychrometric_parameter{"psychrometric_parameter", "Parameter to relate change in air temperature to air density", -HUGE_VAL, false, HUGE_VAL, false};
+    const parameter soil_aba_concentration{"soil_aba_concentration", "The concentration of ABA in the soil.", -HUGE_VAL, false, HUGE_VAL, false};
+
+}
+
+# endif
+
+    </pre></body>
+</html>

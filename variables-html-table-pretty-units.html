@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         h1 { text-align: center; }
+         td { padding: 1em; }
+         .code { font-family: Courier; }
+         td.range { white-space: nowrap; }
+         td.freeform { font-family: Roman; }
+         
+      </style>
+   </head>
+   <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+      <h1>Master BioCro Variable List</h1>
+      <table>
+         <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>units</th>
+            <th>range</th>
+            <th>notes</th>
+         </tr>
+         <tr>
+            <td class="code">windspeed</td>
+            <td>Wind speed at the top of the canopy.</td>
+            <td>
+               <span class="code">m / s</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soilEvap</td>
+            <td>Rate of evaporation of water from the soil.</td>
+            <td>
+               <span class="code"></span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">solar</td>
+            <td>Photosynthetically active radiation photon flux at the top of the canopy</td>
+            <td>μmol / m
+               <sup>2</sup> / s
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">lat</td>
+            <td>Latitude</td>
+            <td>°N</td>
+            <td class="range">[-90, 90]</td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">rh</td>
+            <td>Relative humidity</td>
+            <td>
+               <span class="code">Pa / Pa</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soil_bulk_density</td>
+            <td>Mass of soil per volume of bulk soil.</td>
+            <td>Mg / m
+               <sup>3</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soil_water_content</td>
+            <td>Volume of water per volume of bulk soil.</td>
+            <td>m
+               <sup>3</sup> / m
+               <sup>3</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soil_saturated_conductivity</td>
+            <td>Conductivity of soil when soil_saturation_capacity is 1</td>
+            <td>kg / s / m
+               <sup>3</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soil_saturation_capacity</td>
+            <td>The maximum soil_water_content that the soil can hold.</td>
+            <td>m
+               <sup>3</sup> / m
+               <sup>3</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Leaf</td>
+            <td>Dry mass of leaves per area of ground.</td>
+            <td>
+               <span class="code">Mg / ha</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Stem</td>
+            <td>Dry mass of stems per area of ground.</td>
+            <td>
+               <span class="code">Mg / ha</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Root</td>
+            <td>Dry mass of roots per area of ground.</td>
+            <td>
+               <span class="code">Mg / ha</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Sp</td>
+            <td>Specific leaf area, one-sided leaf area per mass of leaf</td>
+            <td>
+               <span class="code">ha / Mg</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Sp_thermal_time_decay</td>
+            <td>The rate at which Sp decreases</td>
+            <td>ha / Mg / °C / d</td>
+            <td class="range"></td>
+            <td class="freeform">See TTc parameter.</td>
+         </tr>
+         <tr>
+            <td class="code">iSp</td>
+            <td>Initial value of specific leaf area when TTc is 0.</td>
+            <td>
+               <span class="code">ha / Mg</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">TTc</td>
+            <td>Thermal time as growing degree days.</td>
+            <td>°C · d</td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">precipitation_rate</td>
+            <td>Precipitation per time.</td>
+            <td>
+               <span class="code">mm / s</span>
+            </td>
+            <td class="range">[0, 0.52]</td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">b0</td>
+            <td>Ball-Berry model intercept.</td>
+            <td>mol / m
+               <sup>2</sup> / smol / m
+               <sup>2</sup> / s
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">b1</td>
+            <td>Ball-Berry model slope.</td>
+            <td>
+               <span class="code">dimensionless</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">heightf</td>
+            <td>The LAI per vertical height of the canopy</td>
+            <td>m
+               <sup>2</sup> / m
+               <sup>2</sup> / m
+            </td>
+            <td class="range"></td>
+            <td class="freeform">The units simplify to m^-1, but m^2 / m^2 is included for clarity with leaf area index.</td>
+         </tr>
+         <tr>
+            <td class="code">temp</td>
+            <td>Air temperature</td>
+            <td>°C</td>
+            <td class="range">(-273.15, unsp.)</td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">leafwidth</td>
+            <td>Leaf width</td>
+            <td>
+               <span class="code">m</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">canopy_assimilation_rate</td>
+            <td>Canopy carbon assimilation rate on a ground-area basis</td>
+            <td>
+               <span class="code">Mg / ha / h</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">canopy_transpiration_rate</td>
+            <td>Canopy water transpiation rate on a ground-area basis</td>
+            <td>
+               <span class="code">Mg / ha / h</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Grain</td>
+            <td>Mass of grain per ground area</td>
+            <td>
+               <span class="code">Mg / ha</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Rhizome</td>
+            <td>Mass of rhizomes per ground area</td>
+            <td>
+               <span class="code">Mg / ha</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">acceleration_from_gravity</td>
+            <td>Accerlation from gravity</td>
+            <td>m / s
+               <sup>2</sup>
+            </td>
+            <td class="range">[9.7639, 9.8337]</td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">lai</td>
+            <td>Leaf area index</td>
+            <td>m
+               <sup>2</sup> / m
+               <sup>2</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">Catm</td>
+            <td>Atmospheric CO2 concentration</td>
+            <td>μmol / mol</td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">vmax</td>
+            <td>Maximum carboxylation rate of C4 photosynthesis.</td>
+            <td>μmol / m
+               <sup>2</sup> / s
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">alpha</td>
+            <td>Quantum efficiency of CO2 assimiliation for incident radiation.</td>
+            <td>
+               <span class="code">mol / mol</span>
+            </td>
+            <td class="range">(0, 1)</td>
+            <td class="freeform">This is for "incident" not absorbed radiation.</td>
+         </tr>
+         <tr>
+            <td class="code">kparm</td>
+            <td>Slope of the roughly linear portion of an A-Ci curve.</td>
+            <td>mol / m
+               <sup>2</sup> / s / Pa
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">slope_water_vapor</td>
+            <td>Slope of the saturation water vapor density vs air temperature curve.</td>
+            <td>kg / m
+               <sup>3</sup> / K
+            </td>
+            <td class="range"></td>
+            <td class="freeform">It is also kg / m^3 / degrees C since it is a change in temperature.</td>
+         </tr>
+         <tr>
+            <td class="code">latent_heat_vaporization_of_water</td>
+            <td>Latent heat of vaporization of water.</td>
+            <td>
+               <span class="code">J / kg</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">saturation_water_vapor_pressure</td>
+            <td>Vapor pressure of water that saturates the air's capacity.</td>
+            <td>
+               <span class="code">Pa</span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">vapor_density_deficit</td>
+            <td>The different between vapor density and saturated vapor density</td>
+            <td>kg / m
+               <sup>3</sup>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">psychrometric_parameter</td>
+            <td>Parameter to relate change in air temperature to air density</td>
+            <td>kg / m
+               <sup>3</sup> / K
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+         <tr>
+            <td class="code">soil_aba_concentration</td>
+            <td>The concentration of ABA in the soil.</td>
+            <td>
+               <span class="code"></span>
+            </td>
+            <td class="range"></td>
+            <td class="freeform"></td>
+         </tr>
+      </table>
+   </body>
+</html>

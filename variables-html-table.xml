@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="variables-html-table.xsl"?>
+<quantities>
+    <variable name="windspeed"  units="m / s">
+        <description>Wind speed at the top of the canopy.</description>
+    </variable>
+    <variable name="soilEvap"  units="">
+        <description>Rate of evaporation of water from the soil.</description>
+    </variable>
+    <variable name="solar"  units="micromole / m^2 / s">
+        <description>Photosynthetically active radiation photon flux at the top of the canopy</description>
+    </variable>
+    <variable name="lat"  units="degrees N">
+        <description>Latitude</description>
+        <minimum type="inclusive">-90</minimum>
+        <maximum type="inclusive">90</maximum>
+    </variable>
+    <variable name="rh"  units="Pa / Pa">
+        <description>Relative humidity</description>
+    </variable>
+    <variable name="soil_bulk_density"  units="Mg / m^3">
+        <description>Mass of soil per volume of bulk soil.</description>
+    </variable>
+    <variable name="soil_water_content"  units="m^3 / m^3">
+        <description>Volume of water per volume of bulk soil.</description>
+    </variable>
+    <variable name="soil_saturated_conductivity"  units="kg / s / m^3">
+        <description>Conductivity of soil when soil_saturation_capacity is 1</description>
+    </variable>
+    <variable name="soil_saturation_capacity"  units="m^3 / m^3">
+        <description>The maximum soil_water_content that the soil can hold.</description>
+    </variable>
+    <variable name="Leaf"  units="Mg / ha">
+        <description>Dry mass of leaves per area of ground.</description>
+    </variable>
+    <variable name="Stem"  units="Mg / ha">
+        <description>Dry mass of stems per area of ground.</description>
+    </variable>
+    <variable name="Root"  units="Mg / ha">
+        <description>Dry mass of roots per area of ground.</description>
+    </variable>
+    <variable name="Sp"  units="ha / Mg">
+        <description>Specific leaf area, one-sided leaf area per mass of leaf</description>
+    </variable>
+    <variable name="Sp_thermal_time_decay"  units="ha / Mg / degrees C / day">
+        <description>The rate at which Sp decreases</description>
+        <notes>See TTc parameter.</notes>
+     </variable>
+    <variable name="iSp"  units="ha / Mg">
+        <description>Initial value of specific leaf area when TTc is 0.</description>
+    </variable>
+    <variable name="TTc"  units="degrees C * day">
+        <description>Thermal time as growing degree days.</description>
+    </variable>
+    <variable name="precipitation_rate"  units="mm / s">
+        <description>Precipitation per time.</description>
+        <minimum type="inclusive">0</minimum>
+        <maximum type="inclusive">0.52</maximum>
+    </variable>
+    <variable name="b0"  units="mol / m^2 / s">
+        <description>Ball-Berry model intercept.</description>
+    </variable>
+    <variable name="b1"  units="dimensionless">
+        <description>Ball-Berry model slope.</description>
+    </variable>
+    <variable name="heightf"  units="m^2 / m^2 / m">
+        <description>The LAI per vertical height of the canopy</description>
+        <notes>The units simplify to m^-1, but m^2 / m^2 is included for clarity with leaf area index.</notes>
+    </variable>
+    <variable name="temp"  units="degrees C">
+        <description>Air temperature</description>
+        <minimum type="exclusive">-273.15</minimum>
+    </variable>
+    <variable name="leafwidth"  units="m">
+        <description>Leaf width</description>
+    </variable>
+    <variable name="canopy_assimilation_rate"  units="Mg / ha / h">
+        <description>Canopy carbon assimilation rate on a ground-area basis</description>
+    </variable>
+    <variable name="canopy_transpiration_rate"  units="Mg / ha / h">
+        <description>Canopy water transpiation rate on a ground-area basis</description>
+    </variable>
+    <variable name="Grain"  units="Mg / ha">
+        <description>Mass of grain per ground area</description>
+    </variable>
+    <variable name="Rhizome"  units="Mg / ha">
+        <description>Mass of rhizomes per ground area</description>
+    </variable>
+    <variable name="acceleration_from_gravity"  units="m / s^2">
+        <description>Accerlation from gravity</description>
+        <minimum type="inclusive">9.7639</minimum>
+        <maximum type="inclusive">9.8337</maximum>
+    </variable>
+    <variable name="lai"  units="m^2 / m^2">
+        <description>Leaf area index</description>
+    </variable>
+    <variable name="Catm"  units="micromole / mol">
+        <description>Atmospheric CO2 concentration</description>
+    </variable>
+    <variable name="vmax"  units="micromole / m^2 / s">
+        <description>Maximum carboxylation rate of C4 photosynthesis.</description>
+    </variable>
+    <variable name="alpha"  units="mol / mol">
+        <description>Quantum efficiency of CO2 assimiliation for incident radiation.</description>
+        <minimum type="exclusive">0</minimum>
+        <maximum type="exclusive">1</maximum>
+        <notes>This is for "incident" not absorbed radiation.</notes>
+    </variable>
+    <variable name="kparm"  units="mol / m^2 / s / Pa">
+        <description>Slope of the roughly linear portion of an A-Ci curve.</description>
+    </variable>
+    <variable name="slope_water_vapor"  units="kg / m^3 / K">
+        <description>Slope of the saturation water vapor density vs air temperature curve.</description>
+        <notes>It is also kg / m^3 / degrees C since it is a change in temperature.</notes>
+    </variable>
+    <variable name="latent_heat_vaporization_of_water"  units="J / kg">
+        <description>Latent heat of vaporization of water.</description>
+    </variable>
+    <variable name="saturation_water_vapor_pressure"  units="Pa">
+     <description>Vapor pressure of water that saturates the air&apos;s capacity.</description>
+    </variable>
+    <variable name="vapor_density_deficit"  units="kg / m^3">
+        <description>The different between vapor density and saturated vapor density</description>
+    </variable>
+    <variable name="psychrometric_parameter"  units="kg / m^3 / K">
+        <description>Parameter to relate change in air temperature to air density</description>
+    </variable>
+    <variable name="soil_aba_concentration"  units="">
+        <description>The concentration of ABA in the soil.</description>
+    </variable>
+</quantities>

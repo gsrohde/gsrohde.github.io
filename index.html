@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <style>
+      body { font-size: larger; margin: 0 10% 20em 5%; width: 60%; }
+      h1 { text-align: center; }
+      pre { padding-left: 2em; font-size: larger; }
+      code { font-size: larger; }
+      dt { margin-bottom: 0.3em; }
+      dd { margin-bottom: 1em; }
+    </style>
+  </head>
+  <body>
+    <h1>XML as a Repository of BioCro Variable Information</h1>
+    <h2>Examples of how an XML file containing information about BioCro variables can be transformed into different forms serving various needs.</h2>
+    <dl>
+      <dt>Raw XML with no stylesheet.  This is essentially the
+      information from the <code>parameters</code> variable
+      in <code>parameters.h</code>, but in a different form, and with
+      some slight alterations and additions:</dt>
+      <dd><a href="variables.xml">variables.xml</a></dd>
+
+      <dt>The same XML document, except attached to a very simple
+      stylesheet to display it as an HTML table.  Note that the
+      variables have been sorted by name and that variable minimums
+      and maximums are transformed into range-interval notation:</dt>
+      <dd><a href="variables-html-table.xml">variables-html-table.xml</a></dd>
+
+      <dt>The same XML document, except attached to a relatively
+      simple stylesheet to display it as an HTML definition list.
+      Here, the variables are sorted by unit specifier:</dt>
+      <dd><a href="variables-html-list.xml">variables-html-list.xml</a></dd>
+
+      <dt>The same XML document, except attached to a stylesheet to
+      display it as a CSV file.  (The CSV is wrapped in HTML for
+      display in a browser.)  Note that the stylesheet takes care of
+      quoting field values having internal commas, and internal
+      double-quote marks are escaped by doubling them.  Because this
+      stylesheet uses features of XSLT not built into the browser, we
+      have to transform it manually using a more capable XSLT
+      processor.  The variables are here sorted case-sensitively by
+      name:</dt>
+      <dd>This will not be visible except through "view source": <a href="variables-csv.xml">variables-csv.xml</a><br/>
+      Here's the HTML file produced by the SAXON XSLT processor: <a href="variables-csv.html">variables-csv.html</a></dd>
+
+      <dt>The same XML document, except attached to a complex
+      stylesheet.  This also shows the variables in a table, but
+      attempts to "pretty-print" the unit descriptors.  Again, the
+      XSLT transformation doesn't work in the browser.  (Here, the
+      variables have not been sorted and so follow the order of the
+      XML document.)</dt>
+      <dd>This will not be visible except through "view source": <a href="variables-html-table-pretty-units.xml">variables-html-table-pretty-units.xml</a><br/>
+      Here's the HTML file produced by the SAXON XSLT processor: <a href="variables-html-table-pretty-units.html">variables-html-table-pretty-units.html</a></dd>
+
+      <dt>The same XML document, except attached to a stylesheet that
+      creates a C++ file.(*) (The content of the file is wrapped in
+      HTML so that it is easily viewable here.  Again, the variables
+      have not been sorted.)</dt>
+      <dd>This will not be visible except through "view source": <a href="variables-c++-file.xml">variables-c++-file.xml</a><br/>
+      Here's the HTML file produced by the SAXON XSLT processor: <a href="variables-c++-file.html">variables-c++-file.html</a>
+    </dl>
+
+    <hr>
+
+    <p>* The C++ file output assumes a "parameter" information class
+    has been defined in a file called "parameter.h" and has a suitable
+    constructor.  For example:
+      <pre>
+#ifndef PARAMETER_H
+#define PARAMETER_H
+
+#include &lt;string>
+
+class parameter {
+ public:
+
+    parameter(std::string string_name,
+              std::string description,
+              double minimum,
+              bool minimum_is_inclusive,
+              double maximum,
+              bool maximum_is_inclusive)
+        :
+        string_name{string_name},
+        description{description},
+        minimum{minimum},
+        minimum_is_inclusive{minimum_is_inclusive},
+        maximum{maximum},
+        maximum_is_inclusive{maximum_is_inclusive}
+        {}
+
+    std::string get_string_name() const {
+        return string_name;
+    }
+
+    bool in_range(double value) const {
+        if (value < minimum) {
+            return false;
+        }
+        if (value == minimum && !minimum_is_inclusive) {
+            return false;
+        }
+        if (value > maximum) {
+            return false;
+        }
+        if (value == maximum && !maximum_is_inclusive) {
+            return false;
+        }
+        return true;
+    }
+
+ private:
+    std::string string_name;
+    std::string description;
+    double minimum;
+    bool minimum_is_inclusive;
+    double maximum;
+    bool maximum_is_inclusive;
+};
+
+#endif
+      </pre>
+    </p>
+    
+    <p>Modules can then replace raw string names in
+    the <code class="inline">get_ip</code> and
+    <code>get_op</code> functions.  For example,
+      in <code>big_leaf_multilayer_canopy.cpp</code>, the
+      line
+      <pre>windspeed_ip(get_ip(input_parameters, "windspeed")),</pre>
+      could be replaced with
+      <pre>windspeed_ip(get_ip(input_parameters, biocro_parameters::windspeed.get_string_name())),</pre>
+      <em>Requiring</em> this sort of call would ensure that modules
+      only use variables from a well-defined list.  (We could enforce
+      this, if desired, by changing the signatures of
+      the <code>get_ip</code> and
+    <code>get_op</code> functions to take a second parameter of
+    type <code>parameter</code> and moving
+    the <code>get_string_name()</code> calls into these functions.  As
+    an intermediate step, the functions could be overloaded.)</p>
+
+    <p>As an alternative to manually generating a code file from the
+    XML file, it is possible to use C++ code to access information in
+    an XML file directly.  But this would require linking BioCro to an
+    XML library during compilation.</p>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+   </head>
+   <body><pre>name,description,units,range,notes
+Catm,Atmospheric CO2 concentration,micromole / mol,,
+Grain,Mass of grain per ground area,Mg / ha,,
+Leaf,Dry mass of leaves per area of ground.,Mg / ha,,
+Rhizome,Mass of rhizomes per ground area,Mg / ha,,
+Root,Dry mass of roots per area of ground.,Mg / ha,,
+Sp,"Specific leaf area, one-sided leaf area per mass of leaf",ha / Mg,,
+Sp_thermal_time_decay,The rate at which Sp decreases,ha / Mg / degrees C / day,,See TTc parameter.
+Stem,Dry mass of stems per area of ground.,Mg / ha,,
+TTc,Thermal time as growing degree days.,degrees C * day,,
+acceleration_from_gravity,Accerlation from gravity,m / s^2,"[9.7639, 9.8337]",
+alpha,Quantum efficiency of CO2 assimiliation for incident radiation.,mol / mol,"(0, 1)","This is for ""incident"" not absorbed radiation."
+b0,Ball-Berry model intercept.,mol / m^2 / s,,
+b1,Ball-Berry model slope.,dimensionless,,
+canopy_assimilation_rate,Canopy carbon assimilation rate on a ground-area basis,Mg / ha / h,,
+canopy_transpiration_rate,Canopy water transpiation rate on a ground-area basis,Mg / ha / h,,
+heightf,The LAI per vertical height of the canopy,m^2 / m^2 / m,,"The units simplify to m^-1, but m^2 / m^2 is included for clarity with leaf area index."
+iSp,Initial value of specific leaf area when TTc is 0.,ha / Mg,,
+kparm,Slope of the roughly linear portion of an A-Ci curve.,mol / m^2 / s / Pa,,
+lai,Leaf area index,m^2 / m^2,,
+lat,Latitude,degrees N,"[-90, 90]",
+latent_heat_vaporization_of_water,Latent heat of vaporization of water.,J / kg,,
+leafwidth,Leaf width,m,,
+precipitation_rate,Precipitation per time.,mm / s,"[0, 0.52]",
+psychrometric_parameter,Parameter to relate change in air temperature to air density,kg / m^3 / K,,
+rh,Relative humidity,Pa / Pa,,
+saturation_water_vapor_pressure,Vapor pressure of water that saturates the air's capacity.,Pa,,
+slope_water_vapor,Slope of the saturation water vapor density vs air temperature curve.,kg / m^3 / K,,It is also kg / m^3 / degrees C since it is a change in temperature.
+soilEvap,Rate of evaporation of water from the soil.,,,
+soil_aba_concentration,The concentration of ABA in the soil.,,,
+soil_bulk_density,Mass of soil per volume of bulk soil.,Mg / m^3,,
+soil_saturated_conductivity,Conductivity of soil when soil_saturation_capacity is 1,kg / s / m^3,,
+soil_saturation_capacity,The maximum soil_water_content that the soil can hold.,m^3 / m^3,,
+soil_water_content,Volume of water per volume of bulk soil.,m^3 / m^3,,
+solar,Photosynthetically active radiation photon flux at the top of the canopy,micromole / m^2 / s,,
+temp,Air temperature,degrees C,"(-273.15, ∞)",
+vapor_density_deficit,The different between vapor density and saturated vapor density,kg / m^3,,
+vmax,Maximum carboxylation rate of C4 photosynthesis.,micromole / m^2 / s,,
+windspeed,Wind speed at the top of the canopy.,m / s,,
+</pre></body>
+</html>
